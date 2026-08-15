@@ -1,0 +1,25 @@
+workflows:
+  android-release-workflow:
+    name: Android Release APK Build
+    max_build_duration: 30
+    instance_type: mac_mini_m1
+    environment:
+      flutter: stable
+    scripts:
+      - name: Get Flutter packages
+        script: |
+          flutter packages get
+      - name: Build Android APK
+        script: |
+          flutter build apk --release --no-sound-null-safety
+    artifacts:
+      - build/**/outputs/**/*.apk
+      - build/**/outputs/**/mapping.txt
+      - flutter_drive.log
+    publishing:
+      email:
+        recipients:
+          - oali09105@gmail.com
+        notify:
+          success: true
+          failure: true
