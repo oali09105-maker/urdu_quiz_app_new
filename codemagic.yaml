@@ -12,10 +12,8 @@ workflows:
       - name: Build Android APK
         script: |
           flutter build apk --release --no-sound-null-safety
-    artifacts:
-      - build/**/outputs/**/*.apk
-      - build/**/outputs/**/mapping.txt
-      - flutter_drive.log
+   artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
     publishing:
       email:
         recipients:
