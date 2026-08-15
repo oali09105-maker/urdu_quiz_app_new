@@ -27,4 +27,4 @@ flutter:
   fonts:
     - family: UrduNastaliq
       fonts:
-        - asset: assets/fonts/NotoNastaliqUrdu-Regular.ttf
+        - asset: assets/fonts/NotoNastaliqUrdu-VariableFont_wght.ttf
