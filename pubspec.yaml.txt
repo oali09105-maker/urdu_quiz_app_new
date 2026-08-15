@@ -1,0 +1,30 @@
+name: urdu_quiz_app
+description: 3000 Urdu Quiz Flutter Game with RTL and Nastaliq Font support
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/quiz_data_3000.json
+    - assets/Final_UrduQuiz_3000.csv
+
+  fonts:
+    - family: UrduNastaliq
+      fonts:
+        - asset: assets/fonts/NotoNastaliqUrdu-Regular.ttf
