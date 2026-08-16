@@ -11,6 +11,11 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  shared_preferences: ^2.2.2
+  audioplayers: ^6.0.0
+  google_mobile_ads: ^5.0.0
+  share_plus: ^9.0.0
+  csv: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -23,6 +28,8 @@ flutter:
   assets:
     - assets/quiz_data_3000.json
     - assets/Final_UrduQuiz_3000.csv
+    - assets/images/Gemini_Generated_Image_drolzqdrolzqdrol.png
+    - assets/images/Gemini_Generated_Image_sdqol1sdqol1sdqo.png
 
   fonts:
     - family: UrduNastaliq
