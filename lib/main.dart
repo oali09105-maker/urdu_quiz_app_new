@@ -31,7 +31,7 @@ class UrduQuizApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Urdu Quiz, Trick & Brain Challenge',
+      title: 'اردو الفاظ',
       debugShowCheckedModeBanner: false,
       locale: const Locale('ur', 'PK'),
       supportedLocales: const [

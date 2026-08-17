@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../services/preferences_service.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -102,6 +103,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
 
               Container(
+                margin: const EdgeInsets.only(bottom: 12),
                 decoration: BoxDecoration(
                   color: const Color(0xFF1E293B),
                   borderRadius: BorderRadius.circular(14),
@@ -120,11 +122,42 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   onTap: _showGameRulesDialog,
                 ),
               ),
+
+              Container(
+                decoration: BoxDecoration(
+                  color: const Color(0xFF1E293B),
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: ListTile(
+                  leading: const Icon(Icons.privacy_tip, color: Colors.amber),
+                  title: const Text(
+                    'پرائیویسی پالیسی (Privacy Policy)',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontFamily: 'UrduNastaliq',
+                    ),
+                  ),
+                  trailing: const Icon(Icons.open_in_new, color: Colors.white54, size: 16),
+                  onTap: _launchPrivacyPolicy,
+                ),
+              ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  Future<void> _launchPrivacyPolicy() async {
+    final Uri url = Uri.parse('https://zeeustudios.github.io/urdu-alfaz-privacy');
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('پرائیویسی پالیسی کا لنک کھولنے میں ناکامی')),
+        );
+      }
+    }
   }
 
   void _showGameRulesDialog() {

@@ -25,5 +25,9 @@ android/captures/
 android/gradlew
 android/gradlew.bat
 
+# Custom exclusions
+android/app/google-services.json
+assets/sounds/
+
 # Misc
 .DS_Store
