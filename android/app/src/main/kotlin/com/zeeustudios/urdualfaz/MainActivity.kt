@@ -1,4 +1,4 @@
-package com.example.urdu_quiz_app
+package com.zeeustudios.urdualfaz
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -10,17 +10,16 @@ class AudioService {
   Future<void> playCorrectSound() async {
     if (!_prefs.isSoundEnabled()) return;
     try {
-      // Using Source for synthesized sound / tone or asset
-      await _audioPlayer.play(UrlSource('https://actions.google.com/sounds/v1/cartoon/pop.ogg'));
+      await _audioPlayer.play(AssetSource('sounds/tick.mp3'));
     } catch (_) {
-      // Fallback or mute silently if offline
+      // Fallback or mute silently if error
     }
   }
 
   Future<void> playWrongSound() async {
     if (!_prefs.isSoundEnabled()) return;
     try {
-      await _audioPlayer.play(UrlSource('https://actions.google.com/sounds/v1/cartoon/clack.ogg'));
+      await _audioPlayer.play(AssetSource('sounds/beep.mp3'));
     } catch (_) {
       // Fallback
     }

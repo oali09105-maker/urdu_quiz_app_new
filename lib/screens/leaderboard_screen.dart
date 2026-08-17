@@ -27,7 +27,7 @@ class LeaderboardScreen extends StatelessWidget {
       backgroundColor: const Color(0xFF090D16),
       appBar: AppBar(
         backgroundColor: const Color(0xFF0F172A),
-        title: const Text('لیڈر بورڈ (Leaderboard)', style: TextStyle(fontFamily: 'UrduNastaliq')),
+        title: const Text('لوکل ہائی اسکور (Local High Score)', style: TextStyle(fontFamily: 'UrduNastaliq')),
         centerTitle: true,
       ),
       body: Padding(
@@ -52,7 +52,7 @@ class LeaderboardScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const Text(
-                    'دُنیا میں آپ کا نمبر (Your World Rank)',
+                    'لوکل ہائی اسکور',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -67,7 +67,7 @@ class LeaderboardScreen extends StatelessWidget {
                       const Icon(Icons.emoji_events, color: Colors.amber, size: 36),
                       const SizedBox(width: 10),
                       Text(
-                        '#$rank',
+                        '$userScore',
                         style: const TextStyle(
                           color: Colors.amber,
                           fontSize: 36,
@@ -108,7 +108,7 @@ class LeaderboardScreen extends StatelessWidget {
                 ),
                 onPressed: () {
                   Share.share(
-                    '🏆 میں نے "اردو کوئز گیم" کے عالمی لیڈر بورڈ میں #$rank پوزیشن حاصل کی ہے! میرا اسکور: $userScore!',
+                    '🏆 میں نے "اردو الفاظ" گیم میں $userScore اسکور حاصل کیا ہے!',
                   );
                 },
                 icon: const Icon(Icons.share),

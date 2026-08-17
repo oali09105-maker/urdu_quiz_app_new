@@ -1,5 +1,5 @@
 name: urdu_quiz_app
-description: 3000 Urdu Quiz Flutter Game with RTL and Nastaliq Font support
+description: 3000 Urdu Quiz Flutter Game by ZeeU Creative Studios with RTL and Nastaliq Font support
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -16,6 +16,7 @@ dependencies:
   google_mobile_ads: ^5.0.0
   share_plus: ^9.0.0
   csv: ^5.1.0
+  url_launcher: ^6.2.5
 
 dev_dependencies:
   flutter_test:
@@ -30,6 +31,7 @@ flutter:
     - assets/Final_UrduQuiz_3000.csv
     - assets/images/Gemini_Generated_Image_drolzqdrolzqdrol.png
     - assets/images/Gemini_Generated_Image_sdqol1sdqol1sdqo.png
+    - assets/sounds/
 
   fonts:
     - family: UrduNastaliq
