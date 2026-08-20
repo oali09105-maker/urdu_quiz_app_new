@@ -1,21 +1,22 @@
-name: Build Flutter AAB
-
+name: Build and Release AAB
 on:
   push:
-    branches: [ "main", "master" ]
+    branches: [ main, master ]
+  workflow_dispatch:
 
 jobs:
   build:
+    name: Build Android App Bundle (AAB)
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up Java
-        uses: actions/setup-java@v4
+      - name: Set up Java JDK 17
+        uses: actions/setup-java@v3
         with:
-          distribution: 'zulu'
+          distribution: 'temurin'
           java-version: '17'
 
       - name: Set up Flutter
@@ -25,14 +26,16 @@ jobs:
           channel: 'stable'
           cache: true
 
-      - name: Install Dependencies
+      - name: Get Dependencies
         run: flutter pub get
 
-      - name: Build App Bundle (AAB)
-        run: flutter build appbundle --release
+      - name: Build App Bundle (.aab)
+        run: |
+          flutter build appbundle --release --no-sound-null-safety
 
       - name: Upload AAB Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: release-aab
+          name: app-release-aab
           path: build/app/outputs/bundle/release/app-release.aab
+          retention-days: 7
